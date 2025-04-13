@@ -5,7 +5,7 @@
 #: kitty has very powerful font management. You can configure
 #: individual font faces and even specify special fonts for particular
 #: characters.
-font_family      family="Fira Code"
+font_family      family="BlexMono Nerd Font"
 bold_font        auto
 italic_font      auto
 bold_italic_font auto
@@ -19,7 +19,7 @@ bold_italic_font auto
 #: <https://sw.kovidgoyal.net/kitty/kittens/choose-fonts/#font-spec-
 #: syntax>.
 
-font_size 16
+font_size 18
 
 #: Font size (in pts).
 
@@ -54,46 +54,6 @@ font_size 16
 #: The syntax is::
 
 #:     symbol_map codepoints Font Family Name
-
-# IEC Power Symbols
-symbol_map U+23fb-U+23fe,U+2b58 Symbols Nerd Font
-
-# Octicons
-symbol_map U+2665,U+26a1,U+f400-U+f533 Symbols Nerd Font
-
-# Pomicons
-symbol_map U+e000-U+e00a Symbols Nerd Font
-
-# Powerline
-symbol_map U+e0a0-U+e0a2,U+e0b0-U+e0b3 Symbols Nerd Font
-
-# Powerline Extra
-symbol_map U+e0a3,U+e0b4-U+e0c8,U+e0ca,U+e0cc-U+e0d7 Symbols Nerd Font
-
-# Font Awesome Extension
-symbol_map U+e200-U+e2a9 Symbols Nerd Font
-
-# Weather Icons
-symbol_map U+e300-U+e3e3 Symbols Nerd Font
-
-# Seti-UI + Custom
-symbol_map U+e5fa-U+e6b7 Symbols Nerd Font
-
-# Devicons
-symbol_map U+e700-U+e8ef Symbols Nerd Font
-
-# Codicons
-symbol_map U+ea60-U+ec1e Symbols Nerd Font
-
-# Font Awesome
-symbol_map U+ed00-U+edff,U+ee0c-U+efce,U+f000-U+f2ff Symbols Nerd Font
-
-# Font Logos
-symbol_map U+f300-U+f381 Symbols Nerd Font
-
-# Material Design
-symbol_map U+f0001-U+f1af0 Symbols Nerd Font
-
 
 # narrow_symbols
 
@@ -1982,7 +1942,7 @@ symbol_map U+f0001-U+f1af0 Symbols Nerd Font
 #: configuration will change this value only for newly created OS
 #: windows.
 
-linux_display_server wayland
+# linux_display_server auto
 
 #: Choose between Wayland and X11 backends. By default, an appropriate
 #: backend based on the system state is chosen automatically. Set it
@@ -2743,5 +2703,3 @@ map kitty_mod+minus  change_font_size current -2.0
 # Colodore
 include current-theme.conf
 # END_KITTY_THEME
-
-
