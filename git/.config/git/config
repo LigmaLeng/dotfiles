@@ -1,0 +1,10 @@
+[user]
+	name = LigmaLeng
+	email = 96036878+LigmaLeng@users.noreply.github.com
+	signingkey = 5E51C6D0C0C43984
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[init]
+	defaultBranch = main

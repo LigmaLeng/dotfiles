@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
   "position": "top", // Waybar position (top|bottom|left|right)
-  "modules-left": ["hyprland/workspaces"],
+  "modules-left": ["hyprland/workspaces", "hyprland/submap"],
   "modules-center": ["hyprland/window"],
   "modules-right": [
     "keyboard-state",
@@ -27,6 +27,9 @@
       "active": "",
       "default": "",
     },
+  },
+  "hyprland/submap": {
+    "format": "<span style=\"italic\">{}</span>",
   },
   "hyprland/window": {
     "format": "  {}",
