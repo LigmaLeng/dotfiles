@@ -3,12 +3,14 @@ export __GLX_VENDOR_LIBRARY_NAME=nvidia
 export LIBVA_DRIVER_NAME=nvidia
 export NVD_BACKEND=direct
 
-export GDK_BACKEND=wayland
-export QT_QPA_PLATFORM=wayland
+export GDK_BACKEND='wayland,x11,*'
+export QT_QPA_PLATFORM='wayland;xcb'
 export QT_QPA_PLATFORMTHEME=gtk3
 export SDL_VIDEODRIVER=wayland
 
 export MOZ_DISABLE_RDD_SANDBOX=1
+
+export GST_PLUGIN_FEATURE_RANK='nvmpegvideodec:MAX,nvmpeg2videodec:MAX,nvmpeg4videodec:MAX,nvh264sldec:MAX,nvh264dec:MAX,nvjpegdec:MAX,nvh265sldec:MAX,nvh265dec:MAX,nvvp9dec:MAX'
 
 export XCURSOR_THEME=Bibata-Modern-Ice
 export XCURSOR_SIZE=24
