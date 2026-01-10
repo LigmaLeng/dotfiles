@@ -1,27 +1,27 @@
 {
-    "name": "ligma-snippets",
-    "contributes": {
-        "snippets": [
-            {
-                "language": "c",
-                "path": "./c/c.json"
-            },
-            {
-                "language": "cdoc",
-                "path": "./c/cdoc.json"
-            },
-            {
-                "language": "cpp",
-                "path": "./cpp/cpp.json"
-            },
-            {
-                "language": "cpp",
-                "path": "./cpp/cppdoc.json"
-            },
-            {
-                "language": "luadoc",
-                "path": "./lua/luadoc.json"
-            }
-        ]
-    }
+  "name": "ligma-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "c",
+        "path": "./c/c.json"
+      },
+      {
+        "language": "cdoc",
+        "path": "./c/cdoc.json"
+      },
+      {
+        "language": "cpp",
+        "path": "./cpp/cpp.json"
+      },
+      {
+        "language": "cpp",
+        "path": "./cpp/cppdoc.json"
+      },
+      {
+        "language": "luadoc",
+        "path": "./lua/luadoc.json"
+      }
+    ]
+  }
 }

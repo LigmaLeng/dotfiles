@@ -2,10 +2,9 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		opts = {
+			---@type lazyvim.lsp.Config
 			servers = {
-				hyprls = {
-					root_markers = { "hyprland.conf" },
-				},
+				ts_query_ls = {},
 			},
 		},
 	},

@@ -5,4 +5,5 @@
 # vim:fileencoding=utf-8
 
 [flavor]
-dark = "kanagawa"
+dark = "dracula"
+light = "kanagawa"

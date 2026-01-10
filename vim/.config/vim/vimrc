@@ -1,4 +1,6 @@
-runtime! archlinux.vim
+if &compatible
+    set nocompatible
+endif
 
 set suffixes+=.aux,.bbl,.blg,.brf,.cb,.dvi,.idx,.ilg,.ind,.inx,.jpg,.log,.out,.png,.toc
 set suffixes-=.h
@@ -37,7 +39,6 @@ endif
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 
 " FORMATTING
-set nocompatible
 set fileformat=unix
 filetype plugin on
 syntax on

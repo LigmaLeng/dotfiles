@@ -29,6 +29,13 @@ return {
 
 			delete_check_events = "TextChanged",
 			update_events = "TextChanged,TextChangedI",
+			ext_opts = {
+				[require("luasnip.util.types").choiceNode] = {
+					active = {
+						virt_text = { "", "enum" },
+					},
+				},
+			},
 		},
 	},
 }

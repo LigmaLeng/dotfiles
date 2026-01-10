@@ -2,6 +2,10 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+vim.keymap.del({ "i", "x", "n", "s" }, "<C-s>")
+vim.keymap.del({ "s", "i" }, "<Tab>")
+vim.keymap.del({ "s", "i" }, "<S-Tab>")
+
 -- half page up/down
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Half Page Up", buffer = true })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half Page Down", buffer = true })
@@ -18,7 +22,7 @@ vim.keymap.set("n", "}", "}zz", { desc = "Next Paragraph" })
 vim.keymap.set("n", "n", "'Nn'[v:searchforward].'zzzv'", { expr = true, desc = "Next Search Result" })
 vim.keymap.set("n", "N", "'nN'[v:searchforward].'zzzv'", { expr = true, desc = "Prev Search Result" })
 
---  emacs-style insert mode
+-- emacs-style insert mode
 vim.keymap.set("i", "<C-a>", "<Home>", { desc = "Start of Line" })
 vim.keymap.set("i", "<C-b>", "<Left>", { desc = "Left" })
 vim.keymap.set("i", "<C-d>", "<Del>", { desc = "Delete" })
@@ -41,16 +45,14 @@ vim.keymap.set("c", "<C-p>", "<Up>", { desc = "Up" })
 vim.keymap.set("c", "<A-b>", "<S-Left>", { desc = "Left One word" })
 vim.keymap.set("c", "<A-f>", "<S-Right>", { desc = "Right One word" })
 
---  yank-pasting
+-- yank-pasting
 vim.keymap.set("n", "Y", "yg$", { desc = "Yank to EOL" })
-vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank to Clipboard" })
-vim.keymap.set("n", "<leader>y", '"+y', { desc = "Yank to Clipboard" })
+vim.keymap.set({ "n", "x" }, "<leader>y", '"+y', { desc = "Yank to Clipboard" })
 vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Yank to EOL (Clipboard)" })
 
---  void-registers
+-- void-registers
 vim.keymap.set("x", "<leader>p", '"_dP', { desc = "Void Paste" })
-vim.keymap.set("n", "<leader>d", '"_d', { desc = "Void Delete" })
-vim.keymap.set("v", "<leader>d", '"_d', { desc = "Void Delete" })
+vim.keymap.set({ "n", "x" }, "<leader>d", '"_d', { desc = "Void Delete" })
 
 -- save file
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr><esc>", { desc = "Save File" })

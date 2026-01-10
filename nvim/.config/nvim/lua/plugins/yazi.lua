@@ -109,11 +109,14 @@ return {
 		-- example: include a flavor from a subdirectory. There are lots of flavors
 		-- available in https://github.com/yazi-rs/flavors
 		"yazi-rs/flavors",
-		name = "yazi-flavor-catppuccin-mocha",
+		name = "yazi-rs-flavors",
 		lazy = true,
 		build = function(spec)
 			require("yazi.plugin").build_flavor(spec, {
 				sub_dir = "catppuccin-mocha.yazi",
+			})
+			require("yazi.plugin").build_flavor(spec, {
+				sub_dir = "dracula.yazi",
 			})
 		end,
 	},
