@@ -13,7 +13,9 @@ vim.opt.updatetime = 300
 vim.opt.timeoutlen = 150
 --
 vim.opt.textwidth = 79
-vim.opt.wrap = true
+--vim.opt.wrap = true
+--vim.opt.linebreak = true
+--vim.opt.showbreak = "+++"
 --
 vim.opt.autoindent = true
 vim.opt.smartindent = true

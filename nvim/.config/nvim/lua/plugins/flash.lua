@@ -3,7 +3,7 @@ return {
 		"folke/flash.nvim",
 		vscode = false,
 		opts = {
-			labels = "ASDFGHJKLQWERTYUIOPZXCVBNM",
+			labels = "aoeuidhtnspyfgcrlqjkxbmwvz",
 			modes = {
 				char = {
 					keys = { "f", "F", "t", "T", ";", [","] = "\\" },

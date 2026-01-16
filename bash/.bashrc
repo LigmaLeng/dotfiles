@@ -8,48 +8,46 @@
 # The function will only add directories that actually exist on the filesystem,
 # and avoid creating duplicate entries
 prepend_paths() {
-    for d in "$@"; do
-        [[ -d "$d" && ! "$PATH" =~ (^|:)$d(:|$) ]] && PATH="$d:$PATH"
-    done
+	for d in "$@"; do
+		[[ -d "$d" && ! "$PATH" =~ (^|:)$d(:|$) ]] && PATH="$d:$PATH"
+	done
 }
 
 # yazi shell wrapper
 y() {
-    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-    yazi "$@" --cwd-file="$tmp"
-    if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-        builtin cd -- "$cwd"
-    fi
-    rm -f -- "$tmp"
-}
-
-yc() {
-    y "${XDG_CONFIG_HOME}"
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
 }
 
 # Configure environment variables and aliases for color terminals
 alias grep='grep --color=auto' diff='diff --color=auto' ip='ip -color=auto' ls='ls -Cw $COLUMNS --color=auto'
 export MANROFFOPT='-P -c'
 export MANPAGER='nvim +Man!'
-export LESS='--RAW-CONTROL-CHARS --use-color -Dd+r -Dd+r -Du+g'
+export LESS='-R -Dd+r -Dd+r -Du+g'
 
 # Shorthands for ls
 alias ll='ls -l' la='ls -A' lla='ls -lA'
 
 # Define colors for ls
 if [[ -f ${XDG_CONFIG_HOME}/dircolors ]]; then
-    eval "$(dircolors ${XDG_CONFIG_HOME}/dircolors)"
+	eval "$(dircolors ${XDG_CONFIG_HOME}/dircolors)"
 else
-    eval "$(dircolors)"
+	eval "$(dircolors)"
 fi
 
 # XDG BASE DIRECTORIES
-export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc":"$XDG_CONFIG_HOME/gtk-2.0/gtkrc.mine"
+export GNUPGHOME="$XDG_CONFIG_HOME"/gnupg
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
+export W3M_DIR="$XDG_CONFIG_HOME"/w3m
 
-# Set default editor and alias
+# Set default terminal editor and alias
+export TERMINAL=/usr/bin/kitty
 export VISUAL=nvim
 export EDITOR=nvim
 alias vi=nvim

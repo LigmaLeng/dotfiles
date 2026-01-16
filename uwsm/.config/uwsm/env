@@ -5,7 +5,9 @@ export NVD_BACKEND=direct
 
 export GDK_BACKEND='wayland,x11,*'
 export QT_QPA_PLATFORM='wayland;xcb'
-export QT_QPA_PLATFORMTHEME=gtk3
+export QT_QPA_PLATFORMTHEME=xdgdesktopportal
+export GTK_USE_PORTAL=1
+expart NO_AT_BRIDGE=1
 export SDL_VIDEODRIVER=wayland
 
 export MOZ_DISABLE_RDD_SANDBOX=1
