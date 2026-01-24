@@ -15,7 +15,8 @@ prepend_paths() {
 
 # yazi shell wrapper
 y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	local tmp cwd
+	tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
 		builtin cd -- "$cwd"
@@ -40,7 +41,8 @@ else
 fi
 
 # XDG BASE DIRECTORIES
-export GNUPGHOME="$XDG_CONFIG_HOME"/gnupg
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
 export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
@@ -51,13 +53,19 @@ export TERMINAL=/usr/bin/kitty
 export VISUAL=nvim
 export EDITOR=nvim
 alias vi=nvim
+alias vick='nvim $XDG_CONFIG_HOME/kitty/kitty.conf'
+alias vich='nvim $XDG_CONFIG_HOME/hypr/hyprland.conf'
 
 # git
 alias gs="git status" ga="git add" gc="git commit -m" gp="git push" gpl="git pull" gst="git stash"
 alias gsp="git stash; git pull" gfo="git fetch origin" gch="git checkout" gsw="git switch"
 
+# systemd-run0
+alias r="run0 --background=''"
+
 # Configure pinentry to use the correct TTY
-export GPG_TTY=$(tty)
+GPG_TTY=$(tty)
+export GPG_TTY
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
 # History
